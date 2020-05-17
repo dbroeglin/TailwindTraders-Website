@@ -172,7 +172,6 @@
         "clientAffinityEnabled": true
       },
       "resources": [
-        /*
         {
           "apiVersion": "2015-08-01",
           "name": "web",
@@ -185,8 +184,18 @@
             "branch": "[parameters('branch')]",
             "IsManualIntegration": true
           }
+        },
+        {
+          "apiVersion": "2015-08-01",
+          "name": "web",
+          "type": "config",
+          "dependsOn": [
+            "[resourceId('Microsoft.Web/Sites/', variables('name'))]"
+          ],
+          "properties": {
+            "scmType":  "GitHub"
+          }
         }
-        */
       ]
     },
     {
